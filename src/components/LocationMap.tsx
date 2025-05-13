@@ -1,12 +1,11 @@
-
 import React from 'react';
-import { MapPin, ShoppingBag, Bus, Waves, Road } from 'lucide-react';
+import { MapPin, ShoppingBag, Bus, Waves, Navigation } from 'lucide-react';
 
 const LocationMap: React.FC = () => {
   const locations = [
     { id: 1, icon: <ShoppingBag className="w-5 h-5" />, name: 'Recreio Shopping', distance: '5 min' },
     { id: 2, icon: <Bus className="w-5 h-5" />, name: 'BRT', distance: '3 min' },
-    { id: 3, icon: <Road className="w-5 h-5" />, name: 'Av. das Américas', distance: '1 min' },
+    { id: 3, icon: <Navigation className="w-5 h-5" />, name: 'Av. das Américas', distance: '1 min' },
     { id: 4, icon: <Waves className="w-5 h-5" />, name: 'Praia do Recreio', distance: '2 min' },
   ];
 

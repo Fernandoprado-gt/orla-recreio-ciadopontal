@@ -1,24 +1,24 @@
 
 import React from 'react';
-import { Pool, Trees, Child, PlayIcon, Dumbbell, LayoutDashboard, Flame, Dog, Bike, Ship } from 'lucide-react';
+import { Swim, Tree, Users, Play, Dumbbell, LayoutDashboard, Flame, Dog, Bike, Ship } from 'lucide-react';
 
 const AmenitiesGallery: React.FC = () => {
   const amenities = [
     { 
       id: 1, 
-      icon: <Pool className="h-8 w-8 text-orla-blue" />, 
+      icon: <Swim className="h-8 w-8 text-orla-blue" />, 
       title: "Piscina adulto e infantil",
       image: "/placeholder.svg" 
     },
     { 
       id: 2, 
-      icon: <Child className="h-8 w-8 text-orla-green" />, 
+      icon: <Users className="h-8 w-8 text-orla-green" />, 
       title: "Playground",
       image: "/placeholder.svg" 
     },
     { 
       id: 3, 
-      icon: <PlayIcon className="h-8 w-8 text-orla-blue" />, 
+      icon: <Play className="h-8 w-8 text-orla-blue" />, 
       title: "Brinquedoteca",
       image: "/placeholder.svg" 
     },
