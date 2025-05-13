@@ -99,4 +99,59 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Skeleton Loading Animation */
+  .skeleton {
+    @apply bg-gray-200 animate-pulse rounded;
+  }
+  
+  /* Progressive Image Loading */
+  .image-loading {
+    @apply blur-sm transition-all duration-700;
+  }
+  
+  .image-loaded {
+    @apply blur-0;
+  }
+  
+  /* Custom Animation for Hero Elements */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  /* Accessibility Focus Styles */
+  .focus-visible:focus-visible {
+    @apply outline-none ring-2 ring-orla-blue ring-offset-2;
+  }
+  
+  /* Mobile Navigation Animation */
+  .mobile-nav-enter {
+    transform: translateX(-100%);
+  }
+  
+  .mobile-nav-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms;
+  }
+  
+  .mobile-nav-exit {
+    transform: translateX(0);
+  }
+  
+  .mobile-nav-exit-active {
+    transform: translateX(-100%);
+    transition: transform 300ms;
+  }
 }

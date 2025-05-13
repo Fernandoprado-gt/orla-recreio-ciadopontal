@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Palmtree, MapPin, Bus, Building } from 'lucide-react';
+import { MapPin, Palmtree, Bus, Building, Star } from 'lucide-react';
+import { Motion } from '@/components/ui/motion';
 
 const BenefitsSection: React.FC = () => {
   const benefits = [
@@ -8,13 +9,13 @@ const BenefitsSection: React.FC = () => {
       id: 1,
       icon: <MapPin className="w-8 h-8 text-orla-blue" />,
       title: "Localização privilegiada",
-      description: "Na orla do Recreio, entre a natureza, a mobilidade e toda a conveniência da Av. das Américas."
+      description: "A poucos metros da praia do Recreio, entre a natureza e toda a conveniência da Av. das Américas."
     },
     {
       id: 2,
       icon: <Palmtree className="w-8 h-8 text-orla-green" />,
       title: "Lazer completo",
-      description: "Dentro e fora de casa, com inúmeras opções para seu conforto e bem-estar."
+      description: "Piscinas, academia, espaço gourmet, playground e muito mais para seu conforto e bem-estar."
     },
     {
       id: 3,
@@ -24,36 +25,57 @@ const BenefitsSection: React.FC = () => {
     },
     {
       id: 4,
-      icon: <Building className="w-8 h-8 text-orla-green" />,
-      title: "Design moderno",
-      description: "Acabamento de alto padrão com detalhes que fazem a diferença."
+      icon: <Star className="w-8 h-8 text-orla-green" />,
+      title: "Minha Casa Minha Vida",
+      description: "Financiamento facilitado com as melhores condições do mercado."
     }
   ];
 
   return (
-    <section className="section bg-white">
+    <section className="section bg-white" id="beneficios">
       <div className="container mx-auto">
-        <h2 className="section-title">Viver como se estivesse de férias o ano inteiro</h2>
-        <p className="section-subtitle">
-          Na orla do Recreio, entre a natureza, a mobilidade e toda a conveniência da Av. das Américas.
-        </p>
+        <Motion
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="section-title">Viver como se estivesse de férias o ano inteiro</h2>
+          <p className="section-subtitle">
+            Na orla do Recreio, entre a natureza, a mobilidade e toda a conveniência da Av. das Américas.
+          </p>
+        </Motion>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12">
-          {benefits.map((benefit) => (
-            <div key={benefit.id} className="benefit-card flex flex-col items-center text-center p-6">
+          {benefits.map((benefit, index) => (
+            <Motion
+              key={benefit.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="benefit-card flex flex-col items-center text-center p-6 hover:shadow-lg transition-shadow duration-300"
+            >
               <div className="mb-4 p-3 bg-orla-sand rounded-full">
                 {benefit.icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
               <p className="text-gray-700">{benefit.description}</p>
-            </div>
+            </Motion>
           ))}
         </div>
         
         <div className="mt-16 text-center">
-          <a href="#cadastro" className="cta-button">
-            Quero conhecer o ORLA RECREIO
-          </a>
+          <Motion
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <a href="#cadastro" className="cta-button">
+              Quero conhecer o ORLA RECREIO
+            </a>
+          </Motion>
         </div>
       </div>
     </section>

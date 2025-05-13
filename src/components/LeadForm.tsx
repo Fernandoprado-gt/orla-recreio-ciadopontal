@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
+import { Check } from 'lucide-react';
 
 interface LeadFormProps {
   variant?: 'primary' | 'secondary';
@@ -15,6 +16,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
   const [whatsapp, setWhatsapp] = useState('');
   const [interest, setInterest] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const formatPhoneNumber = (value: string) => {
     if (!value) return value;
@@ -64,9 +66,15 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
       console.log({ name, whatsapp, interest });
       
       toast.success('Obrigado! Entraremos em contato em breve.');
-      setName('');
-      setWhatsapp('');
-      setInterest('');
+      setSubmitted(true);
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setName('');
+        setWhatsapp('');
+        setInterest('');
+        setSubmitted(false);
+      }, 3000);
     } catch (error) {
       toast.error('Ocorreu um erro. Por favor, tente novamente.');
       console.error('Form submission error:', error);
@@ -75,8 +83,25 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
     }
   };
 
+  if (submitted) {
+    return (
+      <div className={`${className} bg-white p-6 md:p-8 rounded-lg shadow-md text-center`}>
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <div className="w-16 h-16 bg-orla-green/20 rounded-full flex items-center justify-center">
+            <Check className="w-8 h-8 text-orla-green" />
+          </div>
+          <h3 className="text-2xl font-semibold text-orla-dark-text">Recebemos seu contato!</h3>
+          <p className="text-gray-600">
+            Obrigado pelo interesse no ORLA RECREIO. Um de nossos consultores entrará em contato com você em breve.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <form onSubmit={handleSubmit} className={`${className} bg-white p-4 md:p-6 rounded-lg shadow-md`}>
+      <h3 className="text-xl md:text-2xl font-semibold mb-4 text-center">Receba informações exclusivas</h3>
       <div className="space-y-4">
         <div>
           <Input
@@ -85,6 +110,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
             onChange={(e) => setName(e.target.value)}
             className="form-input"
             disabled={isSubmitting}
+            aria-label="Nome completo"
           />
         </div>
         <div>
@@ -94,6 +120,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
             onChange={handleWhatsappChange}
             className="form-input"
             disabled={isSubmitting}
+            aria-label="WhatsApp"
           />
         </div>
         <div>
