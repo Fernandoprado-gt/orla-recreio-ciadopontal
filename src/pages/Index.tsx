@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import HeroSection from '@/components/HeroSection';
 import BenefitsSection from '@/components/BenefitsSection';
@@ -11,35 +10,31 @@ import LeadForm from '@/components/LeadForm';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import { motion } from 'framer-motion';
 import { Phone, MapPin, Mail } from 'lucide-react';
-
 const Index = () => {
   // Set meta tags for SEO
   useEffect(() => {
     document.title = "ORLA RECREIO | Apartamentos de 1, 2 e 3 quartos no Recreio dos Bandeirantes";
-    
+
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Conheça o ORLA RECREIO, empreendimento no Recreio dos Bandeirantes com apartamentos de 1, 2 e 3 quartos, lazer completo e localização privilegiada na orla do Rio de Janeiro. Financiamento pelo Minha Casa Minha Vida.');
     }
   }, []);
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Header */}
-      <motion.header 
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="bg-white py-4 px-4 sticky top-0 z-40 shadow-sm"
-      >
+      <motion.header initial={{
+      y: -100,
+      opacity: 0
+    }} animate={{
+      y: 0,
+      opacity: 1
+    }} transition={{
+      duration: 0.5
+    }} className="bg-white py-4 px-4 sticky top-0 z-40 shadow-sm">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
-            <img 
-              src="/orla-logo.svg" 
-              alt="ORLA RECREIO" 
-              className="h-12 w-auto"
-            />
+            <img src="/orla-logo.svg" alt="ORLA RECREIO" className="h-12 w-auto" />
           </div>
           <div className="hidden md:flex space-x-6">
             <a href="#plantas" className="text-orla-dark-text hover:text-orla-blue transition-colors">Plantas</a>
@@ -72,26 +67,7 @@ const Index = () => {
         <FaqSection />
         
         {/* Final CTA Section */}
-        <section className="section bg-orla-blue text-white">
-          <div className="container mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Curta cada momento em total sintonia com o Recreio
-              </h2>
-              <p className="text-xl mb-8 max-w-3xl mx-auto">
-                Cadastre-se agora e receba atendimento exclusivo para conhecer todas as vantagens do ORLA RECREIO.
-              </p>
-              <div className="max-w-md mx-auto">
-                <LeadForm variant="secondary" className="bg-white/10 backdrop-blur-sm shadow-lg" />
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        
       </main>
 
       {/* Footer */}
@@ -99,11 +75,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <img 
-                src="/orla-logo.svg" 
-                alt="ORLA RECREIO" 
-                className="h-12 w-auto mb-4"
-              />
+              <img src="/orla-logo.svg" alt="ORLA RECREIO" className="h-12 w-auto mb-4" />
               <p className="text-gray-300 mb-4">
                 O melhor lugar do Rio é a Orla, o melhor é o ORLA.
               </p>
@@ -142,11 +114,11 @@ const Index = () => {
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start">
                   <MapPin className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Av. das Américas, Recreio dos Bandeirantes, Rio de Janeiro - RJ</span>
+                  <span>R. Zélio Valverde, 133 - Recreio dos Bandeirantes, Rio de Janeiro - RJ</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
-                  <span>(21) 9999-9999</span>
+                  <span>(21) 98838-4869</span>
                 </li>
                 <li className="flex items-center">
                   <Mail className="h-5 w-5 mr-2 flex-shrink-0" />
@@ -165,8 +137,6 @@ const Index = () => {
 
       {/* Floating WhatsApp Button */}
       <FloatingWhatsApp />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;

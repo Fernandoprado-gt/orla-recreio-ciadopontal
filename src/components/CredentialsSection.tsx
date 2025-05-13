@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Shield, Award, CircleCheck } from 'lucide-react';
-
 const CredentialsSection: React.FC = () => {
-  return (
-    <section className="section bg-white" id="construtora">
+  return <section className="section bg-white" id="construtora">
       <div className="container mx-auto">
         <h2 className="section-title">60 Anos de Excelência</h2>
         <p className="section-subtitle">
@@ -38,15 +35,9 @@ const CredentialsSection: React.FC = () => {
         </div>
         
         <div className="mt-16 flex items-center justify-center">
-          <img 
-            src="/placeholder.svg" 
-            alt="Logo Construtora Cury" 
-            className="h-32 object-contain"
-          />
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CredentialsSection;
