@@ -11,63 +11,63 @@ const AmenitiesGallery: React.FC = () => {
       icon: <Waves className="h-8 w-8 text-orla-blue" />, 
       title: "Piscina adulto e infantil",
       description: "Para seu lazer e diversão da família",
-      image: "https://images.unsplash.com/photo-1576013551627-0ae7d539b2f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+      image: "/lovable-uploads/07dbcdbc-e8fa-481f-af9e-46f3ff43815e.png" 
     },
     { 
       id: 2, 
       icon: <Users className="h-8 w-8 text-orla-green" />, 
       title: "Playground",
       description: "Espaço seguro para as crianças",
-      image: "https://images.unsplash.com/photo-1594774471399-a3f7d41e392c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+      image: "/lovable-uploads/15854e0c-b3c8-4e9d-a413-056b8fc173b7.png" 
     },
     { 
       id: 3, 
       icon: <Play className="h-8 w-8 text-orla-blue" />, 
       title: "Brinquedoteca",
       description: "Ambiente lúdico e educativo",
-      image: "https://images.unsplash.com/photo-1526978753999-b8b01f0f0a1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+      image: "/lovable-uploads/90028153-a0e6-4c1b-80b8-b35615fb059b.png" 
     },
     { 
       id: 4, 
       icon: <Dumbbell className="h-8 w-8 text-orla-green" />, 
       title: "Academia",
       description: "Equipamentos modernos para seu treino",
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+      image: "/lovable-uploads/3a79d18c-5e03-4e28-8a3f-194043ba787d.png" 
     },
     { 
       id: 5, 
       icon: <LayoutDashboard className="h-8 w-8 text-orla-blue" />, 
       title: "Coworking",
       description: "Espaço ideal para trabalho remoto",
-      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+      image: "/lovable-uploads/089a6db0-a315-4e8c-ac73-d49a8db9bf3e.png" 
     },
     { 
       id: 6, 
       icon: <Flame className="h-8 w-8 text-orla-green" />, 
       title: "Churrasqueiras",
       description: "Para seus momentos de confraternização",
-      image: "https://images.unsplash.com/photo-1594818898109-44d25d97c6c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+      image: "/lovable-uploads/6f3abbeb-cf3b-443a-a74c-6603bec52e76.png" 
     },
     { 
       id: 7, 
       icon: <Dog className="h-8 w-8 text-orla-blue" />, 
       title: "Pet Place",
       description: "Área exclusiva para seu pet",
-      image: "https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+      image: "/lovable-uploads/4b36a589-6073-4d6b-8bb6-4ae2f0a56eca.png" 
     },
     { 
       id: 8, 
       icon: <Bike className="h-8 w-8 text-orla-green" />, 
       title: "Bicicletário",
       description: "Espaço seguro para guardar sua bike",
-      image: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+      image: "/lovable-uploads/6f3abbeb-cf3b-443a-a74c-6603bec52e76.png" 
     },
     { 
       id: 9, 
       icon: <Anchor className="h-8 w-8 text-orla-blue" />, 
       title: "Lava-pranchas",
       description: "Para os amantes do surf",
-      image: "https://images.unsplash.com/photo-1531722569936-825d3dd91b15?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+      image: "/lovable-uploads/089a6db0-a315-4e8c-ac73-d49a8db9bf3e.png" 
     }
   ];
 
