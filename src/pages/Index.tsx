@@ -146,7 +146,7 @@ const Index = () => {
           
           <div className="mt-10 pt-6 border-t border-gray-700 text-gray-400 text-sm">
             <p className="text-center">© 2025 ORLA RECREIO. Todos os direitos reservados. Fotos e ilustrações meramente ilustrativas.</p>
-            <p className="text-center mt-2">Desenvolvido com <span className="text-red-500">❤</span> por Construtora Cury</p>
+            <p className="text-center mt-2">Desenvolvido com <span className="text-red-500">❤</span> por agenciatendencia.com</p>
           </div>
         </div>
       </footer>
