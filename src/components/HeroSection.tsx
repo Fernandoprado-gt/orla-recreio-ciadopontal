@@ -5,8 +5,20 @@ import { Button } from '@/components/ui/button';
 import { Motion } from '@/components/ui/motion';
 
 const HeroSection: React.FC = () => {
-  return <section className="bg-orla-sand relative overflow-hidden pt-8 pb-16 md:py-20 lg:py-24">
-      <div className="container mx-auto px-4">
+  return <section className="relative overflow-hidden pt-8 pb-16 md:py-20 lg:py-24">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 z-0" 
+        style={{
+          backgroundImage: `url('/lovable-uploads/917c7bf4-2c17-4e06-b50b-326df08f161b.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/30"></div> {/* Overlay para melhorar legibilidade */}
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="order-2 md:order-1">
             <Motion initial={{
@@ -18,12 +30,12 @@ const HeroSection: React.FC = () => {
           }} transition={{
             duration: 0.5
           }} className="max-w-xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-orla-dark-text leading-tight mb-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-4 drop-shadow-lg">
                 O melhor lugar do Rio é a Orla, o melhor é o ORLA.
               </h1>
-              <p className="text-xl text-orla-dark-text/80 mb-8">3 quartos no Recreio, com lazer completo e localização privilegiada.</p>
+              <p className="text-xl text-white mb-8 drop-shadow-md">3 quartos no Recreio, com lazer completo e localização privilegiada.</p>
               <div className="md:hidden">
-                <LeadForm className="bg-white/90 backdrop-blur-sm shadow-lg" />
+                <LeadForm className="bg-white/95 backdrop-blur-sm shadow-lg" />
               </div>
               <div className="hidden md:block">
                 <Button asChild className="cta-button animate-pulse hover:animate-none" size="lg">
@@ -50,7 +62,7 @@ const HeroSection: React.FC = () => {
               duration: 0.5,
               delay: 0.2
             }} id="cadastro">
-                <LeadForm className="shadow-lg" />
+                <LeadForm className="shadow-lg bg-white/95 backdrop-blur-sm" />
               </Motion>
             </div>
             <div className="block md:hidden w-full">
@@ -61,8 +73,8 @@ const HeroSection: React.FC = () => {
       </div>
       
       {/* Decorative elements */}
-      <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-orla-blue/10 rounded-full"></div>
-      <div className="absolute top-24 -right-20 w-40 h-40 bg-orla-green/10 rounded-full"></div>
+      <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-orla-blue/20 rounded-full backdrop-blur-sm z-0"></div>
+      <div className="absolute top-24 -right-20 w-40 h-40 bg-orla-green/20 rounded-full backdrop-blur-sm z-0"></div>
     </section>;
 };
 export default HeroSection;
