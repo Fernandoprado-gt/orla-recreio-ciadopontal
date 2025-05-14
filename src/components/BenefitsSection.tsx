@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin, Palmtree, Bus, Building, Star } from 'lucide-react';
+import { MapPin, Palmtree, Bus, Star } from 'lucide-react';
 import { Motion } from '@/components/ui/motion';
 
 const BenefitsSection: React.FC = () => {
@@ -72,7 +72,12 @@ const BenefitsSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <a href="#cadastro" className="cta-button">
+            <a 
+              href="https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20conhecer%20o%20Orla%20Recreio" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="cta-button"
+            >
               Quero conhecer o ORLA RECREIO
             </a>
           </Motion>

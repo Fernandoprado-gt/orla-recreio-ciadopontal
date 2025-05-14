@@ -1,7 +1,9 @@
+
 import React from 'react';
 import LeadForm from './LeadForm';
 import { Button } from '@/components/ui/button';
 import { Motion } from '@/components/ui/motion';
+
 const HeroSection: React.FC = () => {
   return <section className="bg-orla-sand relative overflow-hidden pt-8 pb-16 md:py-20 lg:py-24">
       <div className="container mx-auto px-4">
@@ -25,7 +27,11 @@ const HeroSection: React.FC = () => {
               </div>
               <div className="hidden md:block">
                 <Button asChild className="cta-button animate-pulse hover:animate-none" size="lg">
-                  <a href="#cadastro">
+                  <a 
+                    href="https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Orla%20Recreio" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
                     Quero saber mais sobre o ORLA RECREIO
                   </a>
                 </Button>

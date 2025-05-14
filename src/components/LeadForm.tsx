@@ -41,6 +41,11 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
     setWhatsapp(formatted);
   };
 
+  const redirectToWhatsApp = () => {
+    const message = encodeURIComponent("Olá, acabei de me cadastrar na página do Orla Recreio e gostaria de receber mais informações.");
+    window.open(`https://wa.me/5521988384869?text=${message}`, '_blank');
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -65,16 +70,21 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
       // Handle form submission logic here
       console.log({ name, whatsapp, interest });
       
-      toast.success('Obrigado! Entraremos em contato em breve.');
+      toast.success('Obrigado! Você será redirecionado para o WhatsApp.');
       setSubmitted(true);
       
-      // Reset form after 3 seconds
+      // Redirect to WhatsApp after submission
       setTimeout(() => {
-        setName('');
-        setWhatsapp('');
-        setInterest('');
-        setSubmitted(false);
-      }, 3000);
+        redirectToWhatsApp();
+        
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setName('');
+          setWhatsapp('');
+          setInterest('');
+          setSubmitted(false);
+        }, 3000);
+      }, 1500);
     } catch (error) {
       toast.error('Ocorreu um erro. Por favor, tente novamente.');
       console.error('Form submission error:', error);
@@ -130,8 +140,6 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectItem value="1-quarto">1 Quarto (47,66m²)</SelectItem>
-                <SelectItem value="2-quartos">2 Quartos (47,39m² a 50,66m²)</SelectItem>
                 <SelectItem value="3-quartos">3 Quartos (59,54m²)</SelectItem>
                 <SelectItem value="todos">Todos</SelectItem>
               </SelectGroup>

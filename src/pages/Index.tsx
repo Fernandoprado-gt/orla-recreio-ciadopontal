@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import HeroSection from '@/components/HeroSection';
 import BenefitsSection from '@/components/BenefitsSection';
@@ -10,17 +11,19 @@ import LeadForm from '@/components/LeadForm';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import { motion } from 'framer-motion';
 import { Phone, MapPin, Mail } from 'lucide-react';
+
 const Index = () => {
   // Set meta tags for SEO
   useEffect(() => {
-    document.title = "ORLA RECREIO | Apartamentos de 1, 2 e 3 quartos no Recreio dos Bandeirantes";
+    document.title = "ORLA RECREIO | Apartamentos de 3 quartos no Recreio dos Bandeirantes";
 
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Conheça o ORLA RECREIO, empreendimento no Recreio dos Bandeirantes com apartamentos de 1, 2 e 3 quartos, lazer completo e localização privilegiada na orla do Rio de Janeiro. Financiamento pelo Minha Casa Minha Vida.');
+      metaDescription.setAttribute('content', 'Conheça o ORLA RECREIO, empreendimento no Recreio dos Bandeirantes com apartamentos de 3 quartos, lazer completo e localização privilegiada na orla do Rio de Janeiro. Financiamento pelo Minha Casa Minha Vida.');
     }
   }, []);
+  
   return <div className="min-h-screen">
       {/* Header */}
       <motion.header initial={{
@@ -67,7 +70,20 @@ const Index = () => {
         <FaqSection />
         
         {/* Final CTA Section */}
-        
+        <section className="py-16 bg-orla-blue text-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Garanta já o seu apartamento no ORLA RECREIO</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">Apartamentos de 3 quartos com lazer completo e localização privilegiada na orla do Recreio.</p>
+            <a 
+              href="https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Orla%20Recreio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-white text-orla-blue px-8 py-3 rounded-md font-medium text-lg hover:bg-gray-100 transition-colors inline-block"
+            >
+              Quero saber mais sobre o ORLA RECREIO
+            </a>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
@@ -114,7 +130,7 @@ const Index = () => {
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start">
                   <MapPin className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>R. Zélio Valverde, 133 - Recreio dos Bandeirantes, Rio de Janeiro - RJ</span>
+                  <span>R. Zélio Valverde, 133 - Recreio dos Bandeirantes, Rio de Janeiro - RJ</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="h-5 w-5 mr-2 flex-shrink-0" />
