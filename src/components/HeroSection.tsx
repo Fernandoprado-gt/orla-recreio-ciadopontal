@@ -66,16 +66,7 @@ const HeroSection: React.FC = () => {
                 <LeadForm className="shadow-lg bg-white/95 backdrop-blur-sm" />
               </Motion>
             </div>
-            <div className="block md:hidden w-full">
-              <motion.img 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7 }}
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                alt="ORLA RECREIO - Vista privilegiada para a praia" 
-                className="w-full h-auto rounded-lg shadow-lg object-cover" 
-              />
-            </div>
+            {/* Removida a imagem que aparecia em dispositivos móveis */}
           </div>
         </div>
       </div>
