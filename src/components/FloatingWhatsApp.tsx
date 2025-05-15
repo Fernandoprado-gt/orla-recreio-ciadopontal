@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Motion } from '@/components/ui/motion';
 
 const FloatingWhatsApp: React.FC = () => {
-  const whatsappUrl = 'https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20ORLA%20RECREIO';
+  const whatsappUrl = 'https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20falar%20com%20um%20consultor.';
   
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();

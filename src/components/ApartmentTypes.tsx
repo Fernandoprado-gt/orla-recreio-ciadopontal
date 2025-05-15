@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Motion } from '@/components/ui/motion';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
@@ -6,6 +7,20 @@ const ApartmentTypes: React.FC = () => {
   const apartmentFeatures = {
     "3-quartos": ["Ampla sala de estar e jantar com varanda", "Cozinha integrada", "Suíte master com closet", "Dois quartos adicionais", "Localização privilegiada a poucos metros da praia"]
   };
+  
+  const whatsappUrl = 'https://wa.me/5521988384869?text=Olá,%20tenho%20interesse%20nessa%20planta.';
+  
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Access the global gtag_report_conversion function
+    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
+      (window as any).gtag_report_conversion(whatsappUrl);
+    } else {
+      // Fallback if function isn't available
+      window.open(whatsappUrl, '_blank');
+    }
+  };
+
   return <section className="section bg-orla-gray" id="plantas">
       <div className="container mx-auto">
         <Motion initial={{
@@ -66,7 +81,11 @@ const ApartmentTypes: React.FC = () => {
                     </p>)}
                 </div>
                 <div className="mt-6">
-                  <a href="https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20apartamentos%20de%203%20quartos%20do%20Orla%20Recreio" target="_blank" rel="noopener noreferrer" className="cta-button w-full md:w-auto">
+                  <a 
+                    href={whatsappUrl} 
+                    onClick={handleWhatsAppClick}
+                    className="cta-button w-full md:w-auto"
+                  >
                     Tenho interesse nesta planta
                   </a>
                 </div>

@@ -4,7 +4,7 @@ import { MapPin, Palmtree, Bus, Star } from 'lucide-react';
 import { Motion } from '@/components/ui/motion';
 
 const BenefitsSection: React.FC = () => {
-  const whatsappUrl = 'https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20conhecer%20o%20Orla%20Recreio';
+  const whatsappUrl = 'https://wa.me/5521988384869?text=Olá,%20quero%20conhecer%20todos%20os%20benefícios.';
   
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
