@@ -62,6 +62,22 @@
     }
     </script>
     
+    <!-- Event snippet for Lead Form Submission conversion tracking -->
+    <script>
+    function gtag_report_form_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-11491239026/jsswCOj3rMgaEPLIuecq',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
     <!-- Editor functionality script - required for development only -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>

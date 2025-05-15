@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -77,6 +78,13 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
       console.log({ name, whatsapp, interest });
       
       toast.success('Obrigado! Você será redirecionado para o WhatsApp.');
+      
+      // Track form submission conversion
+      if (typeof window !== 'undefined' && typeof (window as any).gtag_report_form_conversion === 'function') {
+        (window as any).gtag_report_form_conversion();
+        console.log('Form submission conversion tracked');
+      }
+      
       setSubmitted(true);
       
       // Redirect to WhatsApp after submission
