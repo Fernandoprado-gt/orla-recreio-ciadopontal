@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -17,6 +16,8 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
   const [interest, setInterest] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  
+  const whatsappUrl = 'https://wa.me/5521988384869?text=Olá,%20acabei%20de%20me%20cadastrar%20na%20página%20do%20Orla%20Recreio%20e%20gostaria%20de%20receber%20mais%20informações.';
 
   const formatPhoneNumber = (value: string) => {
     if (!value) return value;
@@ -42,8 +43,13 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
   };
 
   const redirectToWhatsApp = () => {
-    const message = encodeURIComponent("Olá, acabei de me cadastrar na página do Orla Recreio e gostaria de receber mais informações.");
-    window.open(`https://wa.me/5521988384869?text=${message}`, '_blank');
+    // Use conversion tracking before redirecting
+    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
+      (window as any).gtag_report_conversion(whatsappUrl);
+    } else {
+      // Fallback if function isn't available
+      window.open(whatsappUrl, '_blank');
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

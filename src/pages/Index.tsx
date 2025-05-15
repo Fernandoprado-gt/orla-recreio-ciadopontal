@@ -14,6 +14,19 @@ import { Motion, fadeIn, slideIn } from '@/components/ui/motion';
 import { Phone, MapPin, Mail } from 'lucide-react';
 
 const Index = () => {
+  const whatsappUrl = 'https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Orla%20Recreio';
+  
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Access the global gtag_report_conversion function
+    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
+      (window as any).gtag_report_conversion(whatsappUrl);
+    } else {
+      // Fallback if function isn't available
+      window.open(whatsappUrl, '_blank');
+    }
+  };
+
   // Set meta tags for SEO
   useEffect(() => {
     document.title = "ORLA RECREIO | Apartamentos de 3 quartos no Recreio dos Bandeirantes";
@@ -137,9 +150,8 @@ const Index = () => {
               <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Orla%20Recreio" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href={whatsappUrl}
+                onClick={handleWhatsAppClick}
                 className="bg-white text-orla-blue px-8 py-3 rounded-md font-medium text-lg hover:bg-gray-100 transition-colors inline-block"
               >
                 Quero saber mais sobre o ORLA RECREIO

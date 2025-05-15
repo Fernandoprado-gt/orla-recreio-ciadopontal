@@ -46,6 +46,22 @@
       gtag('config', 'AW-11491239026');
     </script>
     
+    <!-- Event snippet for WhatsApp Click conversion tracking -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-11491239026/_0qpCOWfp8gaEPLIuecq',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
     <!-- Editor functionality script - required for development only -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>

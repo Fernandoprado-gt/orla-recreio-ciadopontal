@@ -6,6 +6,19 @@ import { Motion, fadeIn, slideIn } from '@/components/ui/motion';
 import { motion } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
+  const whatsappUrl = 'https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Orla%20Recreio';
+  
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Access the global gtag_report_conversion function
+    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
+      (window as any).gtag_report_conversion(whatsappUrl);
+    } else {
+      // Fallback if function isn't available
+      window.open(whatsappUrl, '_blank');
+    }
+  };
+
   return <section className="relative overflow-hidden pt-8 pb-16 md:py-20 lg:py-24">
       {/* Background Image with Overlay */}
       <div 
@@ -37,9 +50,8 @@ const HeroSection: React.FC = () => {
                 >
                   <Button asChild className="cta-button animate-pulse hover:animate-none" size="lg">
                     <a 
-                      href="https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Orla%20Recreio" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
+                      href={whatsappUrl}
+                      onClick={handleWhatsAppClick}
                     >
                       Quero saber mais sobre o ORLA RECREIO
                     </a>

@@ -1,7 +1,22 @@
+
 import React from 'react';
 import { MapPin, Palmtree, Bus, Star } from 'lucide-react';
 import { Motion } from '@/components/ui/motion';
+
 const BenefitsSection: React.FC = () => {
+  const whatsappUrl = 'https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20conhecer%20o%20Orla%20Recreio';
+  
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Access the global gtag_report_conversion function
+    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
+      (window as any).gtag_report_conversion(whatsappUrl);
+    } else {
+      // Fallback if function isn't available
+      window.open(whatsappUrl, '_blank');
+    }
+  };
+
   const benefits = [{
     id: 1,
     icon: <MapPin className="w-8 h-8 text-orla-blue" />,
@@ -23,6 +38,7 @@ const BenefitsSection: React.FC = () => {
     title: "Minha Casa Minha Vida",
     description: "Financiamento facilitado com as melhores condições do mercado."
   }];
+  
   return <section id="beneficios" className="section bg-white">
       <div className="container mx-auto">
         <Motion initial={{
@@ -76,7 +92,11 @@ const BenefitsSection: React.FC = () => {
           duration: 0.5,
           delay: 0.4
         }}>
-            <a href="https://wa.me/5521988384869?text=Olá,%20gostaria%20de%20conhecer%20o%20Orla%20Recreio" target="_blank" rel="noopener noreferrer" className="cta-button">
+            <a 
+              href={whatsappUrl} 
+              onClick={handleWhatsAppClick}
+              className="cta-button"
+            >
               Quero conhecer o ORLA RECREIO
             </a>
           </Motion>
