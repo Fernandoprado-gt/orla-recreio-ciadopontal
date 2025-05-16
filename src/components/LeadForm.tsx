@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
 import { Check } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 interface LeadFormProps {
   variant?: 'primary' | 'secondary';
@@ -15,6 +16,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
   const [name, setName] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [interest, setInterest] = useState('');
+  const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   
@@ -70,13 +72,27 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
     
     setIsSubmitting(true);
     
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Save lead to Supabase
+      const { error } = await supabase
+        .from('leads_cia_do_pontal')
+        .insert([
+          { 
+            nome: name, 
+            telefone: whatsapp, 
+            email: email || null, // Make email optional
+            interesse: interest 
+          }
+        ]);
       
-      // Handle form submission logic here
-      console.log({ name, whatsapp, interest });
+      if (error) {
+        console.error('Supabase insert error:', error);
+        toast.error('Ocorreu um erro ao salvar seus dados. Por favor, tente novamente.');
+        setIsSubmitting(false);
+        return;
+      }
       
+      // If we get here, the submission was successful
       toast.success('Obrigado! Você será redirecionado para o WhatsApp.');
       
       // Track form submission conversion
@@ -95,6 +111,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
         setTimeout(() => {
           setName('');
           setWhatsapp('');
+          setEmail('');
           setInterest('');
           setSubmitted(false);
         }, 3000);
@@ -145,6 +162,17 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
             className="form-input"
             disabled={isSubmitting}
             aria-label="WhatsApp"
+          />
+        </div>
+        <div>
+          <Input
+            placeholder="Email (opcional)"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="form-input"
+            disabled={isSubmitting}
+            aria-label="Email"
           />
         </div>
         <div>
