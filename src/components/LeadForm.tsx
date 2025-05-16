@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -69,15 +70,16 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase.rpc('insert_lead_cia_do_pontal', {
+      // Use the RPC function instead of direct table operation
+      const { data, error } = await supabase.rpc('insert_lead_cia_do_pontal', {
         p_nome: name,
         p_telefone: whatsapp,
-        p_email: email || null,
+        p_email: email || null, 
         p_interesse: interest
       });
       
       if (error) {
-        console.error('Supabase insert error:', error);
+        console.error('Supabase RPC error:', error);
         toast.error('Ocorreu um erro ao salvar seus dados. Por favor, tente novamente.');
         setIsSubmitting(false);
         return;
