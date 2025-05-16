@@ -83,7 +83,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      insert_lead_cia_do_pontal: {
+        Args: {
+          p_nome: string
+          p_telefone: string
+          p_email: string
+          p_interesse: string
+        }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
