@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -46,11 +45,9 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
   };
 
   const redirectToWhatsApp = () => {
-    // Use conversion tracking before redirecting
     if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
       (window as any).gtag_report_conversion(whatsappUrl);
     } else {
-      // Fallback if function isn't available
       window.open(whatsappUrl, '_blank');
     }
   };
@@ -63,7 +60,6 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
       return;
     }
 
-    // Basic WhatsApp validation
     const digitsOnly = whatsapp.replace(/\D/g, '');
     if (digitsOnly.length < 11) {
       toast.error('Por favor, insira um número de WhatsApp válido.');
@@ -73,17 +69,12 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
     setIsSubmitting(true);
     
     try {
-      // Save lead to Supabase
-      const { error } = await supabase
-        .from('leads_cia_do_pontal')
-        .insert([
-          { 
-            nome: name, 
-            telefone: whatsapp, 
-            email: email || null, // Make email optional
-            interesse: interest 
-          }
-        ]);
+      const { error } = await supabase.rpc('insert_lead_cia_do_pontal', {
+        p_nome: name,
+        p_telefone: whatsapp,
+        p_email: email || null,
+        p_interesse: interest
+      });
       
       if (error) {
         console.error('Supabase insert error:', error);
@@ -92,10 +83,8 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
         return;
       }
       
-      // If we get here, the submission was successful
       toast.success('Obrigado! Você será redirecionado para o WhatsApp.');
       
-      // Track form submission conversion
       if (typeof window !== 'undefined' && typeof (window as any).gtag_report_form_conversion === 'function') {
         (window as any).gtag_report_form_conversion();
         console.log('Form submission conversion tracked');
@@ -103,11 +92,9 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
       
       setSubmitted(true);
       
-      // Redirect to WhatsApp after submission
       setTimeout(() => {
         redirectToWhatsApp();
         
-        // Reset form after 3 seconds
         setTimeout(() => {
           setName('');
           setWhatsapp('');

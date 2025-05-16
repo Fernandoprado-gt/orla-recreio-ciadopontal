@@ -51,6 +51,33 @@ export type Database = {
         }
         Relationships: []
       }
+      leads_cia_do_pontal: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          interesse: string
+          nome: string
+          telefone: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          interesse: string
+          nome: string
+          telefone: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          interesse?: string
+          nome?: string
+          telefone?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
