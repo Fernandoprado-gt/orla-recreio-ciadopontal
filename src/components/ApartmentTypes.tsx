@@ -3,6 +3,7 @@ import React from 'react';
 import { Motion } from '@/components/ui/motion';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Check } from 'lucide-react';
+
 const ApartmentTypes: React.FC = () => {
   const apartmentFeatures = {
     "3-quartos": ["Ampla sala de estar e jantar com varanda", "Cozinha integrada", "Suíte master com closet", "Dois quartos adicionais", "Localização privilegiada a poucos metros da praia"]
@@ -12,9 +13,9 @@ const ApartmentTypes: React.FC = () => {
   
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    // Access the global gtag_report_conversion function
-    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
-      (window as any).gtag_report_conversion(whatsappUrl);
+    // Access the global gtag_report_conversion_whatsapp function
+    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion_whatsapp === 'function') {
+      return (window as any).gtag_report_conversion_whatsapp(whatsappUrl);
     } else {
       // Fallback if function isn't available
       window.open(whatsappUrl, '_blank');

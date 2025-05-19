@@ -46,8 +46,8 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
   };
 
   const redirectToWhatsApp = () => {
-    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
-      (window as any).gtag_report_conversion(whatsappUrl);
+    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion_whatsapp === 'function') {
+      return (window as any).gtag_report_conversion_whatsapp(whatsappUrl);
     } else {
       window.open(whatsappUrl, '_blank');
     }

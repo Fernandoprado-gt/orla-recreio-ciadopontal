@@ -1,3 +1,6 @@
+<think>
+
+</think>
 
 import React from 'react';
 import { MapPin, Palmtree, Bus, Star } from 'lucide-react';
@@ -8,9 +11,9 @@ const BenefitsSection: React.FC = () => {
   
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    // Access the global gtag_report_conversion function
-    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion === 'function') {
-      (window as any).gtag_report_conversion(whatsappUrl);
+    // Access the global gtag_report_conversion_whatsapp function
+    if (typeof window !== 'undefined' && typeof (window as any).gtag_report_conversion_whatsapp === 'function') {
+      return (window as any).gtag_report_conversion_whatsapp(whatsappUrl);
     } else {
       // Fallback if function isn't available
       window.open(whatsappUrl, '_blank');
