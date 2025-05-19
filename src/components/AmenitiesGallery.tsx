@@ -39,14 +39,14 @@ const AmenitiesGallery: React.FC = () => {
       icon: <LayoutDashboard className="h-8 w-8 text-orla-blue" />, 
       title: "Coworking",
       description: "Espaço ideal para trabalho remoto",
-      image: "/lovable-uploads/089a6db0-a315-4e8c-ac73-d49a8db9bf3e.png" 
+      image: "/lovable-uploads/0783db88-b240-4b19-9249-25cb026ca334.png" 
     },
     { 
       id: 6, 
       icon: <Flame className="h-8 w-8 text-orla-green" />, 
       title: "Churrasqueiras",
       description: "Para seus momentos de confraternização",
-      image: "/lovable-uploads/6f3abbeb-cf3b-443a-a74c-6603bec52e76.png" 
+      image: "/lovable-uploads/4f56411e-069c-45e3-893f-8306d71eac13.png" 
     },
     { 
       id: 7, 
@@ -60,14 +60,14 @@ const AmenitiesGallery: React.FC = () => {
       icon: <Bike className="h-8 w-8 text-orla-green" />, 
       title: "Bicicletário",
       description: "Espaço seguro para guardar sua bike",
-      image: "/lovable-uploads/6f3abbeb-cf3b-443a-a74c-6603bec52e76.png" 
+      image: "/lovable-uploads/917c7bf4-2c17-4e06-b50b-326df08f161b.png" 
     },
     { 
       id: 9, 
       icon: <Anchor className="h-8 w-8 text-orla-blue" />, 
       title: "Lava-pranchas",
       description: "Para os amantes do surf",
-      image: "/lovable-uploads/089a6db0-a315-4e8c-ac73-d49a8db9bf3e.png" 
+      image: "/lovable-uploads/8eb4350b-b2b5-4e59-b400-1c87391c872f.png" 
     }
   ];
 
