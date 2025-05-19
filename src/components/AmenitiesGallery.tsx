@@ -9,7 +9,7 @@ const AmenitiesGallery: React.FC = () => {
     { 
       id: 1, 
       icon: <Waves className="h-8 w-8 text-orla-blue" />, 
-      title: "Piscina adulto e infantil",
+      title: "Piscina adulto e Infantil",
       description: "Para seu lazer e diversão da família",
       image: "/lovable-uploads/07dbcdbc-e8fa-481f-af9e-46f3ff43815e.png" 
     },
@@ -23,49 +23,49 @@ const AmenitiesGallery: React.FC = () => {
     { 
       id: 3, 
       icon: <Play className="h-8 w-8 text-orla-blue" />, 
-      title: "Brinquedoteca",
+      title: "Vista aérea do condomínio",
       description: "Ambiente lúdico e educativo",
       image: "/lovable-uploads/90028153-a0e6-4c1b-80b8-b35615fb059b.png" 
     },
     { 
       id: 4, 
       icon: <Dumbbell className="h-8 w-8 text-orla-green" />, 
-      title: "Academia",
+      title: "Churrasqueira",
       description: "Equipamentos modernos para seu treino",
       image: "/lovable-uploads/3a79d18c-5e03-4e28-8a3f-194043ba787d.png" 
     },
     { 
       id: 5, 
       icon: <LayoutDashboard className="h-8 w-8 text-orla-blue" />, 
-      title: "Coworking",
+      title: "Prancharia",
       description: "Espaço ideal para trabalho remoto",
       image: "/lovable-uploads/0783db88-b240-4b19-9249-25cb026ca334.png" 
     },
     { 
       id: 6, 
       icon: <Flame className="h-8 w-8 text-orla-green" />, 
-      title: "Churrasqueiras",
+      title: "Bicicletário",
       description: "Para seus momentos de confraternização",
       image: "/lovable-uploads/4f56411e-069c-45e3-893f-8306d71eac13.png" 
     },
     { 
       id: 7, 
       icon: <Dog className="h-8 w-8 text-orla-blue" />, 
-      title: "Pet Place",
+      title: "Pet place",
       description: "Área exclusiva para seu pet",
       image: "/lovable-uploads/4b36a589-6073-4d6b-8bb6-4ae2f0a56eca.png" 
     },
     { 
       id: 8, 
       icon: <Bike className="h-8 w-8 text-orla-green" />, 
-      title: "Bicicletário",
+      title: "Vista do Pontal",
       description: "Espaço seguro para guardar sua bike",
       image: "/lovable-uploads/917c7bf4-2c17-4e06-b50b-326df08f161b.png" 
     },
     { 
       id: 9, 
       icon: <Anchor className="h-8 w-8 text-orla-blue" />, 
-      title: "Lava-pranchas",
+      title: "Foto do decorado",
       description: "Para os amantes do surf",
       image: "/lovable-uploads/8eb4350b-b2b5-4e59-b400-1c87391c872f.png" 
     }
