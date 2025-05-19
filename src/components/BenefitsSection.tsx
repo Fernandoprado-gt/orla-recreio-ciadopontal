@@ -1,6 +1,3 @@
-<think>
-
-</think>
 
 import React from 'react';
 import { MapPin, Palmtree, Bus, Star } from 'lucide-react';
