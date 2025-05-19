@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Waves, Users, Play, Dumbbell, Dog, Bike, Anchor } from 'lucide-react';
+import { Waves, Users, Play, Dumbbell, LayoutDashboard, Flame, Dog, Bike, Anchor } from 'lucide-react';
 import { Motion } from '@/components/ui/motion';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
@@ -32,6 +33,20 @@ const AmenitiesGallery: React.FC = () => {
       title: "Academia",
       description: "Equipamentos modernos para seu treino",
       image: "/lovable-uploads/3a79d18c-5e03-4e28-8a3f-194043ba787d.png" 
+    },
+    { 
+      id: 5, 
+      icon: <LayoutDashboard className="h-8 w-8 text-orla-blue" />, 
+      title: "Coworking",
+      description: "Espaço ideal para trabalho remoto",
+      image: "/lovable-uploads/0783db88-b240-4b19-9249-25cb026ca334.png" 
+    },
+    { 
+      id: 6, 
+      icon: <Flame className="h-8 w-8 text-orla-green" />, 
+      title: "Churrasqueiras",
+      description: "Para seus momentos de confraternização",
+      image: "/lovable-uploads/4f56411e-069c-45e3-893f-8306d71eac13.png" 
     },
     { 
       id: 7, 
