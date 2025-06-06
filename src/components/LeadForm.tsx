@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
 import { Check } from 'lucide-react';
-import { supabase } from '@/integrations/supabase/client';
+
 
 interface LeadFormProps {
   variant?: 'primary' | 'secondary';
