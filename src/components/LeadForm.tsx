@@ -71,7 +71,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ variant = 'primary', className = ''
     
     try {
       // Use the RPC function instead of direct table operation
-      const { data, error } = await supabase.rpc('insert_lead_cia_do_pontal', {
+      const { data, error } = await supabase.rpc('insert_leads', {
         p_nome: name,
         p_telefone: whatsapp,
         p_email: email || null, 
